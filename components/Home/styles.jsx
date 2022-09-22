@@ -8,7 +8,7 @@ export const Flex = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 2vh 0;
+    margin: 2vh 0 4vh;
     color: ${props=>(props.dark?'white':'black')};
 `
 
@@ -49,10 +49,10 @@ export const Filter = styled.select`
     border-radius: 2px;
 `
 
-export const Grid = styled.div`
+export const FlexWrap = styled.div`
     display: grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap: 1vw;
+    grid-template-columns: repeat(4 ,1fr);
+    gap: 3vw 1vw;
 `
 
 

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Grid } from './styles';
+import { FlexWrap, Grid } from './styles';
 import Country from '../cards/Country';
 
 const Countries = () => {
@@ -8,28 +8,29 @@ const Countries = () => {
     useEffect(()=>{
     fetch(`https://restcountries.com/v3.1/all`)
         .then(res => res.json())
-        .then(data =>{setCountries(data); console.log(data[0]);
-        });
+        .then(data =>{setCountries(data);});
     }, [])
    
     console.log(countries);
     
     const CountriesCard = countries.map(country =>{
+        console.log(country.capital);
+        
         return(
             <Country
-             key={country} 
+             key={country.name.common} 
              img={country.flags.png}
              name={country.name.common}
              population={country.population}
              continent={country.continents[0]}
-             capital={country.capitals} />
+             capital={country.capital} />
         )
     })
 
     return (
-        <Grid>
+        <FlexWrap>
            {CountriesCard}
-        </Grid>
+        </FlexWrap>
     );
 };
 

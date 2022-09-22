@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Card = styled.div`
+    width: 21.3vw;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -17,6 +18,10 @@ export const Card = styled.div`
             color: ${props => (props.dark?'white':  'black')};
         }
         color: ${props => (props.dark?'#d9e2e9':  '#2b3743')}
+    }
+
+    & > img{
+        height: 50%;
     }
     
 `

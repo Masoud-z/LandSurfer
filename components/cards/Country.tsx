@@ -5,7 +5,7 @@ import {Card, CardDitail} from './styles';
 const Country = (props:any) => {
     return (
         <Card dark>
-            <img src={props.img}  alt={props.name} layout="fill" />
+            <img src={props.img}  alt={props.name} />
 
             <CardDitail>
                 <h2>{props.name}</h2>
