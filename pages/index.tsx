@@ -1,11 +1,15 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import Home from '../components/Home/Home'
-import {Header} from '../components/layout/styles'
+
+
 
 const HomePage: NextPage = () => {
+
   return (
     <>
       <Home />
+
     </>
   )
 }
