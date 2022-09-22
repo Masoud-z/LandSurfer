@@ -13,7 +13,8 @@ const ArengBar = () => {
             <Filter dark>
                 <option>Filter by Region</option>
                 <option>Africa</option>
-                <option>America</option>
+                <option>North America</option>
+                <option>South America</option>
                 <option>Asia</option>
                 <option>Europe</option>
                 <option>Oceania</option>

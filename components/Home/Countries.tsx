@@ -21,7 +21,7 @@ const Countries = () => {
              key={country.name.common} 
              img={country.flags.png}
              name={country.name.common}
-             population={country.population}
+             population={country.population.toLocaleString()}
              continent={country.continents[0]}
              capital={country.capital} />
         )

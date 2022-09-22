@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const Card = styled.div`
-    width: 19.9vw;
+    /* width: 19.9vw; */
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ export const CardDitail = styled.div`
     flex-direction: column;
     padding: 3vh 1vw 1.5vh;
     & > h2{
-        margin-bottom: 1vh;
+        margin-bottom: 2vh;
     }
     & > p{
         & > b{
