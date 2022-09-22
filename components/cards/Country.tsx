@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 import {Card, CardDitail} from './styles';
 
@@ -6,7 +5,7 @@ import {Card, CardDitail} from './styles';
 const Country = (props:any) => {
     return (
         <Card dark>
-            <Image src={props.img}  alt={props.name} />
+            <img src={props.img}  alt={props.name} layout="fill" />
 
             <CardDitail>
                 <h2>{props.name}</h2>
