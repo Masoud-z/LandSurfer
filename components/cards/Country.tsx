@@ -7,7 +7,7 @@ const Country = (props:any) => {
         <Card dark>
             <img src={props.img}  alt={props.name} />
 
-            <CardDitail>
+            <CardDitail dark>
                 <h2>{props.name}</h2>
                 <p><b>Population: </b>{props.population}</p>
                 <p><b>Region: </b>{props.continent}</p>

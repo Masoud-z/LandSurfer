@@ -52,7 +52,7 @@ export const Filter = styled.select`
 export const FlexWrap = styled.div`
     display: grid;
     grid-template-columns: repeat(4 ,1fr);
-    gap: 3vw 1vw;
+    gap: 3vw 3vw;
 `
 
 
