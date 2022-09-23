@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { RegionContext } from '../helper/RegionContext';
 import ArengBar from './ArengBar'
 import Countries from './Countries';
 
 
 const Home = () => {
+    const [region, setRegion] = useState('');
     return (
-        <div>
+        <RegionContext.Provider value={{region, setRegion}}>
             <ArengBar />
             <Countries />
-        </div>
+        </RegionContext.Provider>
     );
 };
 
