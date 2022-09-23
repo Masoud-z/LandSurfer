@@ -6,17 +6,14 @@ import {RiLoader2Fill} from 'react-icons/ri'
 const Countries = () => {
 
     const [countries, setCountries] = useState([]);
+    const [showLoading, setshowLoading] = useState(true);
     useEffect(()=>{
     fetch(`https://restcountries.com/v3.1/all`)
         .then(res => res.json())
         .then(data =>{setCountries(data);});
     }, [])
-   
-    console.log(countries);
     
-    const CountriesCard = countries.map(country =>{
-        console.log(country.capital);
-        
+    const CountriesCard = countries.map(country =>{ 
         return(  
            <Country
              key={country.name.common} 
@@ -26,16 +23,16 @@ const Countries = () => {
              continent={country.continents[0]}
              capital={country.capital} /> 
         )
-    })
+    });
 
     return (
         <>
-            <Loading dark>
+            {CountriesCard.length == 0 && <Loading dark>
                 <RiLoader2Fill />
-            </Loading>
-            {/* <Grid>
+            </Loading>}
+            <Grid>
                {CountriesCard}
-            </Grid> */}
+            </Grid>
         </>
     );
 };
