@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {  Grid } from './styles';
+import {  Grid, Loading } from './styles';
 import Country from '../cards/Country';
+import {RiLoader2Fill} from 'react-icons/ri'
 
 const Countries = () => {
 
@@ -16,21 +17,26 @@ const Countries = () => {
     const CountriesCard = countries.map(country =>{
         console.log(country.capital);
         
-        return(
-            <Country
+        return(  
+           <Country
              key={country.name.common} 
              img={country.flags.png}
              name={country.name.common}
              population={country.population.toLocaleString()}
              continent={country.continents[0]}
-             capital={country.capital} />
+             capital={country.capital} /> 
         )
     })
 
     return (
-        <Grid>
-           {CountriesCard}
-        </Grid>
+        <>
+            <Loading dark>
+                <RiLoader2Fill />
+            </Loading>
+            {/* <Grid>
+               {CountriesCard}
+            </Grid> */}
+        </>
     );
 };
 

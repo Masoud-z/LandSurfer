@@ -6,6 +6,7 @@ export const Page = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${props=>(props.dark? '#202d36': '#fafafa')};
+    overflow: hidden;
 `
 
 export const Header = styled.div`
@@ -27,7 +28,7 @@ export const DarkModeContainer= styled.div`
 
 export const MainContainer = styled.div`
     width: 100%;
-    height: 100%;
+    min-height: 90vh;
     padding: 2vh 5vw;
 `
 
