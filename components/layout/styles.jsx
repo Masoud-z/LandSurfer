@@ -18,6 +18,13 @@ export const Header = styled.div`
     padding: 4vh 5vw;
 `
 
+export const DarkModeContainer= styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+`
+
 export const MainContainer = styled.div`
     width: 100%;
     height: 100%;

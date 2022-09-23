@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { FlexWrap, Grid } from './styles';
+import {  Grid } from './styles';
 import Country from '../cards/Country';
 
 const Countries = () => {
@@ -28,9 +28,9 @@ const Countries = () => {
     })
 
     return (
-        <FlexWrap>
+        <Grid>
            {CountriesCard}
-        </FlexWrap>
+        </Grid>
     );
 };
 

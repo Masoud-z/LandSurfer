@@ -49,7 +49,7 @@ export const Filter = styled.select`
     border-radius: 2px;
 `
 
-export const FlexWrap = styled.div`
+export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(4 ,19.9vw);
     gap: 3vw 3vw;
