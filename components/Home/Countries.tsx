@@ -4,6 +4,7 @@ import Country from '../cards/Country';
 import {RiLoader2Fill} from 'react-icons/ri'
 import { RegionContext } from '../helper/RegionContext';
 import { CountryContext } from '../helper/CountryContext';
+import { Dark } from '../helper/Dark';
 
 const Countries = () => {
 
@@ -12,6 +13,7 @@ const Countries = () => {
     const [errorHandler, setErrorHandler] = useState(false);
     const {region, setRegion}:any = useContext(RegionContext);
     const {searchedCountry,setSearchedCountry}:any = useContext(CountryContext);
+    const {darkMode, setDarkMode}:any = useContext(Dark);
 
     
     useEffect(()=>{
@@ -26,7 +28,7 @@ const Countries = () => {
         }
         if(searchedCountry != ""){
             setCountries([]);
-            // setRegion("");
+            setRegion("");
             fetch(`https://restcountries.com/v3.1/name/${searchedCountry}`)
             .then(res => res.json())
             .then(data =>{ 
@@ -66,10 +68,10 @@ const Countries = () => {
 
     return (
         <>
-            {countries.length == 0 && !errorHandler && <Loading dark>
+            {countries.length == 0 && !errorHandler && <Loading dark={darkMode}>
                 <RiLoader2Fill />
             </Loading>}
-            {errorHandler && <Error dark>
+            {errorHandler && <Error dark={darkMode}>
                     Country not Found
                 </Error>}
             <Grid>

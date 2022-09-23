@@ -3,11 +3,13 @@ import {Filter, Flex, SearchBar, SearchContainer} from './styles';
 import {BiSearchAlt2} from 'react-icons/bi'
 import { RegionContext } from '../helper/RegionContext';
 import { CountryContext } from '../helper/CountryContext';
+import { Dark } from '../helper/Dark';
 
 const ArengBar = () => {
 
     const {region, setRegion}:any = useContext(RegionContext);
     const {searchedCountry,setSearchedCountry}:any = useContext(CountryContext);
+    const {darkMode, setDarkMode}:any = useContext(Dark);
     
 
     function onChangeRegion(event:any){
@@ -19,18 +21,18 @@ const ArengBar = () => {
     }
 
     return (
-        <Flex dark>
-            <SearchContainer dark>
+        <Flex dark={darkMode}>
+            <SearchContainer dark={darkMode}>
                 <BiSearchAlt2 />
                 <SearchBar
-                 dark
+                 dark={darkMode}
                  onChange={onChangeCountry}
                  placeholder= 'Search for a countru...'
                  value={searchedCountry} />
             </SearchContainer>
 
             <Filter
-             dark
+             dark={darkMode}
              onChange={onChangeRegion}
              value={region}>
                 <option value="">Filter by Region</option>

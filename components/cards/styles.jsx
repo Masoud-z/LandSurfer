@@ -11,7 +11,7 @@ export const Card = styled.div`
     color: ${props => (props.dark?'white':  '#2b3743')};
     border: none;
     border-radius: 4px;
-    box-shadow: 1px 1px 1px #2b3743;
+    box-shadow: 0px 0px 2px #2b3743;
 
     & > img{
         height: 50%;

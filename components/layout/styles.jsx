@@ -24,6 +24,7 @@ export const DarkModeContainer= styled.div`
     align-items: center;
     justify-content: center;
     gap: 1vw;
+    cursor: pointer;
 `
 
 export const MainContainer = styled.div`

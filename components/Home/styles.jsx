@@ -72,6 +72,7 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(4 ,19.9vw);
     gap: 3vw 3vw;
+    
 `
 
 export const Loading = styled.div`
