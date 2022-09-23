@@ -89,6 +89,20 @@ export const Loading = styled.div`
     animation: ${rotate} 2s linear infinite;
 `
 
+export const Error= styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    position: relative;
+    top: 30vh;
+    right: -50%;
+    transform: translateX(-50%);
+    color: ${props=>(props.dark?'white':'black')};
+    font-size: 4rem;
+`
 
 
 

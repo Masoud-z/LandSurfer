@@ -2,17 +2,21 @@ import React, {useContext} from 'react';
 import {Filter, Flex, SearchBar, SearchContainer} from './styles';
 import {BiSearchAlt2} from 'react-icons/bi'
 import { RegionContext } from '../helper/RegionContext';
+import { CountryContext } from '../helper/CountryContext';
 
 const ArengBar = () => {
 
     const {region, setRegion}:any = useContext(RegionContext);
+    const {searchedCountry,setSearchedCountry}:any = useContext(CountryContext);
     
 
     function onChangeRegion(event:any){
         setRegion(event.target.value);       
     }
 
-   
+    function onChangeCountry(event:any){
+        setSearchedCountry(event.target.value);      
+    }
 
     return (
         <Flex dark>
@@ -20,7 +24,9 @@ const ArengBar = () => {
                 <BiSearchAlt2 />
                 <SearchBar
                  dark
-                 placeholder= 'Search for a countru...' />
+                 onChange={onChangeCountry}
+                 placeholder= 'Search for a countru...'
+                 value={searchedCountry} />
             </SearchContainer>
 
             <Filter
