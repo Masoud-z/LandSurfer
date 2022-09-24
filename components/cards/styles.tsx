@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const Card = styled.div`
+export const CountryCard = styled.div`
     /* width: 19.9vw; */
     padding: 0;
     display: flex;
@@ -19,7 +19,7 @@ export const Card = styled.div`
     
 `
 
-export const CardDitail = styled.div`
+export const CountryCardDitail = styled.div`
     display: flex;
     flex-direction: column;
     padding: 3vh 1vw 1.5vh;
@@ -33,3 +33,42 @@ export const CardDitail = styled.div`
         color: ${props => (props.dark?'#d9e2e9':  '#2b3743')}
     }
 `
+
+export const Flex = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 4vh 0 6vh;
+    color: ${props=>(props.dark?'white':'black')};
+`
+
+
+export const Grid = styled.div`
+    display: grid;
+    height: 350px;
+    grid-template-columns: 45% 45%;
+    gap: 10%;
+    margin-top: 7vh;
+
+    & > img{
+        max-height: 60vh;
+        width: 100%;
+    } 
+`
+
+export const FlexColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2vh 0;
+    color: ${props=>(props.dark?'white':'black')};
+    & > p{
+        & > b{
+            color: ${props => (props.dark?'white':  'black')};
+        }
+        color: ${props => (props.dark?'#d9e2e9':  '#2b3743')};
+        margin: 1vh 0;
+    }
+`
+

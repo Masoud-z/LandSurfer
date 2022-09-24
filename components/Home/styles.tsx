@@ -27,7 +27,7 @@ export const Flex = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 2vh 0 4vh;
+    margin: 4vh 0 6vh;
     color: ${props=>(props.dark?'white':'black')};
 `
 
@@ -52,7 +52,7 @@ export const SearchContainer = styled.div`
     background-color:  ${props=>(props.dark?'#2b3743':'white')};
     color: ${props=>(props.dark?'#fffeff':'#8b8b8b')};
     padding: 0 1vw;
-    border-radius: 2px;
+    border-radius: 4px;
 `
 
 export const Filter = styled.select`
