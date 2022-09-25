@@ -13,9 +13,8 @@ const Details = () => {
         .then(res => res.json())
         .then(data =>{ setCountry(data[0]); });
     },[])
-    console.log(country);  
-    console.log(country.cca3);  
-    //https://restcountries.com/v3.1/alpha/pe   
+     
+  
     return (
         <>
         { country &&
@@ -30,6 +29,7 @@ const Details = () => {
               tld={country.tld[0]}
               currencies={country.currencies}
               languages={country.languages}
+              borders={country.borders}
             />
         }
         </>

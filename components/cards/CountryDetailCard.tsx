@@ -1,20 +1,46 @@
-import React, { useContext } from 'react';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Dark } from '../helper/Dark';
-import { Flex, FlexColumn, Grid } from './styles';
+import { Button, Flex, FlexColumn, Grid } from './styles';
 
 const CountryDetailCard = (props:any) => {
+
     const {darkMode, setDarkMode}:any = useContext(Dark);
     const nativeName = Object.values(props.native)[0];
     const currencies = Object.values(props.currencies).map(currency=>currency.name);
     const languages = Object.values(props.languages);
-    console.log(languages);
+    const [borderCountries,setBorderCountries]:any = useState([]);
+
+    useEffect(()=>{
+        let newArray:any =[];
+        props.borders.map(country=>{
+            fetch(`https://restcountries.com/v3.1/alpha/${country}`)
+            .then(res => res.json())
+            .then(data =>{setBorderCountries(perv=>{
+                newArray = perv;
+                newArray.push(data[0]);
+                return newArray;
+                })
+            })
+        });
+
+    },[])
+
+    console.log(borderCountries);
+    const borderCountriesBotton = borderCountries.map(borderCountry=>{
+        return(
+            <Button key={borderCountry.name.common} dark={darkMode}>{borderCountry.name.common}</Button>
+        )
+    });
     
+
     
-    //Object.values(props.native)[0]
     
     return (
         <Grid>
           <img src={props.img} alt={props.name}/> 
+
             <FlexColumn dark={darkMode}>
                 <h1>{props.name}</h1>
                 <Flex dark={darkMode}>
@@ -61,6 +87,10 @@ const CountryDetailCard = (props:any) => {
                             {languages.toString()}
                         </p>
                     </FlexColumn>
+                </Flex>
+
+                <Flex dark={darkMode} css={css`margin-top:0px;`}>
+                    <p><b>Border Countries: </b></p>{borderCountriesBotton}
                 </Flex>
             </FlexColumn>
         </Grid>

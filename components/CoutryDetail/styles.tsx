@@ -11,7 +11,7 @@ export const Flex = styled.div`
     color: ${props=>(props.dark?'white':'black')};
 `
 
-export const BackButton = styled.button`
+export const Button = styled.button`
     color: ${props=>(props.dark?'white':'black')};
     background-color: ${props=>(props.dark?'#2b3743':'white')};
     padding: 0.5rem 1.5rem;
