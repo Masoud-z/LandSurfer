@@ -44,10 +44,14 @@ export const Flex = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 4vh 0 6vh;
+    margin: 4vh 0 4vh;
     color: ${props=>(props.dark?'white':'black')};
     & > button{
         padding: 0.5rem;
+    }
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        justify-content: center;
     }
 `
 
@@ -58,18 +62,25 @@ export const Grid = styled.div`
     grid-template-columns: 45% 45%;
     gap: 10%;
     margin-top: 7vh;
+    margin-bottom: 5vh;
 
     & > img{
         max-height: 60vh;
         width: 100%;
     } 
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 70%;
+        justify-content: center;
+        height: auto;
+    }
 `
 
 export const FlexColumn = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     padding: 2vh 0;
     color: ${props=>(props.dark?'white':'black')};
     & > p{
@@ -78,6 +89,10 @@ export const FlexColumn = styled.div`
         }
         color: ${props => (props.dark?'#d9e2e9':  '#2b3743')};
         margin: 1vh 0;
+    }
+    @media screen and (max-width: 1024px) {
+        justify-content: center;
+        text-align: center;
     }
 `
 
