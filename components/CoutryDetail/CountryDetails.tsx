@@ -3,12 +3,12 @@ import { Dark } from '../helper/Dark';
 import NavBar from './NavBar';
 import Details from './Details';
 
-const CountryDetails = () => {
+const CountryDetails = (props:any) => {
     const {darkMode, setDarkMode}:any = useContext(Dark);
     return (
         <>
             <NavBar />
-            <Details />
+            <Details cca={props.cca}/>
         </>
     );
 };

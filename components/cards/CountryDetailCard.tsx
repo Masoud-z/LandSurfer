@@ -13,33 +13,33 @@ const CountryDetailCard = (props:any) => {
     const [borderCountries,setBorderCountries]:any = useState([]);
 
 
-    useEffect(()=>{
-        setBorderCountries([]);
-        let newArray:any =[];
-        props.borders.map(country=>{
-            fetch(`https://restcountries.com/v3.1/alpha/${country}`)
-            .then(res => res.json())
-            .then(data =>{setBorderCountries(perv=>{
-                newArray = perv;
-                newArray.push(data[0]);
-                return newArray;
-                })
-            })
-        });
-    },[])
+    // useEffect(()=>{
+    //     setBorderCountries([]);
+    //     let newArray:any =[];
+    //     props.borders.map(country=>{
+    //         fetch(`https://restcountries.com/v3.1/alpha/${country}`)
+    //         .then(res => res.json())
+    //         .then(data =>{setBorderCountries(perv=>{
+    //             newArray = perv;
+    //             newArray.push(data[0]);
+    //             return newArray;
+    //             })
+    //         })
+    //     });
+    // },[])
 
     // console.log(borderCountries);
   
 
-      const  borderCountriesBotton = borderCountries.map(borderCountry=>{
-            console.log(borderCountry);
-            return(
-                <Button key={borderCountry.name.common} dark={darkMode}>{borderCountry.name.common}</Button>
-            )
-        });
+    //   const  borderCountriesBotton = borderCountries.map(borderCountry=>{
+    //         console.log(borderCountry);
+    //         return(
+    //             <Button key={borderCountry.name.common} dark={darkMode}>{borderCountry.name.common}</Button>
+    //         )
+    //     });
 
         
-        console.log(borderCountriesBotton);
+        // console.log(borderCountriesBotton);
         
 
     

@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react';
 import CountryDetailCard from '../cards/CountryDetailCard';
 
 
-const Details = () => {
+const Details = (props:any) => {
     const [country, setCountry] = useState('') ;
 
-
+    console.log(props.cca);
+    
     useEffect(()=>{
-        fetch(`https://restcountries.com/v3.1/alpha/BEL`)
+        fetch(`https://restcountries.com/v3.1/alpha/${props.cca}`)
         .then(res => res.json())
         .then(data =>{ setCountry(data[0]);
         });
