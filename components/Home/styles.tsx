@@ -41,6 +41,9 @@ export const SearchBar = styled.input`
   &:focus{
     border: none;
   }
+  @media screen and (max-width: 1024px) {
+      width: 45vw;
+    }
 `
 
 
@@ -53,6 +56,7 @@ export const SearchContainer = styled.div`
     color: ${props=>(props.dark?'#fffeff':'#8b8b8b')};
     padding: 0 1vw;
     border-radius: 4px;
+    
 `
 
 export const Filter = styled.select`
@@ -66,6 +70,9 @@ export const Filter = styled.select`
         border: none;
     }
     border-radius: 2px;
+    @media screen and (max-width: 1024px) {
+      width: 35vw;
+    }
 `
 
 export const Grid = styled.div`
@@ -73,6 +80,14 @@ export const Grid = styled.div`
     grid-template-columns: repeat(4 ,19.9vw);
     gap: 3vw 3vw;
     
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: repeat(2 ,42vw);
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(1 ,60vw);
+      justify-content: center;
+    }
 `
 
 export const Loading = styled.div`
