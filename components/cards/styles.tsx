@@ -16,7 +16,10 @@ export const CountryCard = styled.div`
     & > img{
         height: 50%;
     }
-    
+
+    &:hover{
+        cursor: pointer;
+    }
 `
 
 export const CountryCardDitail = styled.div`

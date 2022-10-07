@@ -12,7 +12,9 @@ const CountryDetailCard = (props:any) => {
     const languages = Object.values(props.languages);
     const [borderCountries,setBorderCountries]:any = useState([]);
 
+
     useEffect(()=>{
+        setBorderCountries([]);
         let newArray:any =[];
         props.borders.map(country=>{
             fetch(`https://restcountries.com/v3.1/alpha/${country}`)
@@ -24,18 +26,22 @@ const CountryDetailCard = (props:any) => {
                 })
             })
         });
-
     },[])
 
-    console.log(borderCountries);
-    const borderCountriesBotton = borderCountries.map(borderCountry=>{
-        return(
-            <Button key={borderCountry.name.common} dark={darkMode}>{borderCountry.name.common}</Button>
-        )
-    });
-    
+    // console.log(borderCountries);
+  
 
-    
+      const  borderCountriesBotton = borderCountries.map(borderCountry=>{
+            console.log(borderCountry);
+            return(
+                <Button key={borderCountry.name.common} dark={darkMode}>{borderCountry.name.common}</Button>
+            )
+        });
+
+        
+        console.log(borderCountriesBotton);
+        
+
     
     return (
         <Grid>
@@ -90,7 +96,7 @@ const CountryDetailCard = (props:any) => {
                 </Flex>
 
                 <Flex dark={darkMode} css={css`margin-top:0px;`}>
-                    <p><b>Border Countries: </b></p>{borderCountriesBotton}
+                    <p><b>Border Countries: </b></p>
                 </Flex>
             </FlexColumn>
         </Grid>

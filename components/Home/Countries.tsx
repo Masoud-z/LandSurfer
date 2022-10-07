@@ -46,13 +46,11 @@ const Countries = () => {
             fetch(`https://restcountries.com/v3.1/all`)
             .then(res => res.json())
             .then(data =>{ setCountries(data); });
-            console.log("all");
-            
+            console.log("all"); 
         } 
-
     }, [region, searchedCountry])
     
-    
+    console.log(countries[1]);
     
     const CountriesCard= countries.map(country =>{ 
         return(  
@@ -62,9 +60,13 @@ const Countries = () => {
              name={country.name.common}
              population={country.population.toLocaleString()}
              continent={country.continents[0]}
-             capital={country.capital} /> 
+             capital={country.capital}
+             cca={country.cca3} /> 
+             
         )
     });
+
+    
 
     return (
         <>

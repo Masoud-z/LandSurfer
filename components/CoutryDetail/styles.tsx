@@ -21,6 +21,10 @@ export const Button = styled.button`
     align-items: center;
     border: none;
     border-radius: 4px;
+    
+    &:hover{
+        cursor: pointer;
+    }
 
     & > span{
         padding-left: 7px;

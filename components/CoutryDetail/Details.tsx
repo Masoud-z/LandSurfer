@@ -1,8 +1,7 @@
-import { count } from 'console';
-import React, { useContext, useEffect, useState } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import CountryDetailCard from '../cards/CountryDetailCard';
-import { Dark } from '../helper/Dark';
-import { Flex, FlexColumn, Grid } from './styles';
+
 
 const Details = () => {
     const [country, setCountry] = useState('') ;
@@ -11,9 +10,12 @@ const Details = () => {
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/alpha/BEL`)
         .then(res => res.json())
-        .then(data =>{ setCountry(data[0]); });
+        .then(data =>{ setCountry(data[0]);
+        });
     },[])
      
+    console.log(country);
+    
   
     return (
         <>
