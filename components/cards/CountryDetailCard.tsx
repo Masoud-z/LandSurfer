@@ -2,7 +2,8 @@
 import { css } from '@emotion/react';
 import React, { useContext, useEffect, useState } from 'react';
 import { Dark } from '../helper/Dark';
-import { Button, Flex, FlexColumn, Grid } from './styles';
+import { Button, Flex, FlexColumn, Grid, Loading } from './styles';
+import {RiLoader2Fill} from 'react-icons/ri'
 
 const CountryDetailCard = (props:any) => {
 
@@ -44,6 +45,7 @@ const CountryDetailCard = (props:any) => {
 
     
     return (
+
         <Grid>
           <img src={props.img} alt={props.name}/> 
 

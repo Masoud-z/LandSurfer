@@ -1,10 +1,14 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import CountryDetailCard from '../cards/CountryDetailCard';
+import { Dark } from '../helper/Dark';
+import { Loading } from './styles';
+import {RiLoader2Fill} from 'react-icons/ri'
 
 
 const Details = (props:any) => {
     const [country, setCountry] = useState('') ;
+    const {darkMode, setDarkMode}:any = useContext(Dark);
 
     console.log(props.cca);
     
@@ -20,7 +24,7 @@ const Details = (props:any) => {
   
     return (
         <>
-        { country &&
+        { country ?
             <CountryDetailCard 
               img={country.flags.png}
               name={country.name.common}
@@ -34,7 +38,8 @@ const Details = (props:any) => {
               languages={country.languages}
               borders={country.borders}
             />
-        }
+         : <Loading dark={darkMode}><RiLoader2Fill/></Loading>}
+        
         </>
     );
 };

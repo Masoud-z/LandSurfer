@@ -1,6 +1,24 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+
+const rotate = keyframes`
+    0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(90degdeg);
+  }
+
+  60% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+`
 
 
 export const Flex = styled.div`
@@ -30,6 +48,23 @@ export const Button = styled.button`
         padding-left: 7px;
     }
 ` 
+
+
+export const Loading = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    position: relative;
+    top: 30vh;
+    right: -50%;
+    color: ${props=>(props.dark?'white':'black')};
+    font-size: 4rem;
+    animation: ${rotate} 2s linear infinite;
+`
+
 
 
 
