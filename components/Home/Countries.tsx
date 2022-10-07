@@ -50,7 +50,7 @@ const Countries = () => {
         } 
     }, [region, searchedCountry])
     
-    console.log(countries[1]);
+    
     
     const CountriesCard= countries.map(country =>{ 
         return(  

@@ -53,6 +53,8 @@ export const Flex = styled.div`
         flex-direction: column;
         justify-content: center;
     }
+
+    
 `
 
 
@@ -101,13 +103,28 @@ export const Button = styled.button`
     background-color: ${props=>(props.dark?'#2b3743':'white')};
     padding: 0.5rem 1.5rem;
     box-shadow: 0px 0px 1px rgba(43, 55, 67,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 5px 5px;
     border: none;
-    border-radius: 4px;    
+    border-radius: 4px;
+    &:hover{
+        cursor: pointer;
+        background-color: ${props=>(props.dark?'#485058':'#f1f1f1')};
+    }    
 `
 
+export const Neighbour = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4vh 0 4vh;
+    color: ${props=>(props.dark?'white':'black')};
+    & > button{
+        padding: 0.5rem;
+    }
+
+    
+`
 
 
 

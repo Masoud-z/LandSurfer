@@ -9,7 +9,7 @@ const CountryDetailsPage = () => {
 
     return (
         <>
-            <CountryDetails cca={router.asPath}/>
+            <CountryDetails key={router.asPath} cca={router.asPath}/>
         </>
     );
 };

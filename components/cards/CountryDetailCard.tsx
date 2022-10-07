@@ -2,8 +2,10 @@
 import { css } from '@emotion/react';
 import React, { useContext, useEffect, useState } from 'react';
 import { Dark } from '../helper/Dark';
-import { Button, Flex, FlexColumn, Grid, Loading } from './styles';
+import { Button, Flex, FlexColumn, Grid, Loading, Neighbour } from './styles';
 import {RiLoader2Fill} from 'react-icons/ri'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const CountryDetailCard = (props:any) => {
 
@@ -11,36 +13,42 @@ const CountryDetailCard = (props:any) => {
     const nativeName = Object.values(props.native)[0];
     const currencies = Object.values(props.currencies).map(currency=>currency.name);
     const languages = Object.values(props.languages);
-    const [borderCountries,setBorderCountries]:any = useState([]);
+    const [borderCountries,setBorderCountries] = useState<any[]>([]);
+
+    const router = useRouter();
 
 
-    // useEffect(()=>{
-    //     setBorderCountries([]);
-    //     let newArray:any =[];
-    //     props.borders.map(country=>{
-    //         fetch(`https://restcountries.com/v3.1/alpha/${country}`)
-    //         .then(res => res.json())
-    //         .then(data =>{setBorderCountries(perv=>{
-    //             newArray = perv;
-    //             newArray.push(data[0]);
-    //             return newArray;
-    //             })
-    //         })
-    //     });
-    // },[])
 
-    // console.log(borderCountries);
-  
 
-    //   const  borderCountriesBotton = borderCountries.map(borderCountry=>{
-    //         console.log(borderCountry);
-    //         return(
-    //             <Button key={borderCountry.name.common} dark={darkMode}>{borderCountry.name.common}</Button>
-    //         )
-    //     });
+    useEffect(()=>{
+        const totalCountofAllCountries = props.borders.length
+        let allCountries:any[] = []
+        props.borders.map(async countryCode=>{
+            const resp = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+            const countryJson = await resp.json()
+            allCountries.push(countryJson[0])
+            if(allCountries.length === totalCountofAllCountries){
+                setBorderCountries(allCountries)
+            }
+        })
+    },[])
 
-        
-        // console.log(borderCountriesBotton);
+     console.log(borderCountries);
+
+      const  borderCountriesBotton = borderCountries.map(borderCountry=>{
+            console.log(borderCountry);
+            return(
+                <Link 
+                 key={borderCountry.cca3}
+                 href={`./${borderCountry.cca3}`}>
+                    <Button
+                     key={borderCountry.name.common} 
+                     dark={darkMode}>
+                        {borderCountry.name.common}
+                    </Button>
+                </Link>
+            )
+        });
         
 
     
@@ -98,7 +106,7 @@ const CountryDetailCard = (props:any) => {
                 </Flex>
 
                 <Flex dark={darkMode} css={css`margin-top:0px;`}>
-                    <p><b>Border Countries: </b></p>
+                    <p><b>Border Countries: </b>{borderCountriesBotton}</p>
                 </Flex>
             </FlexColumn>
         </Grid>
