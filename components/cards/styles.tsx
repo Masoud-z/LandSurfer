@@ -14,6 +14,7 @@ export const CountryCard = styled.div`
     border: none;
     border-radius: 4px;
     box-shadow: 0px 0px 1px rgba(43, 55, 67,0.5);
+    transition: linear 0.3s;
 
     & > img{
         height: 50%;
@@ -21,6 +22,8 @@ export const CountryCard = styled.div`
 
     &:hover{
         cursor: pointer;
+        transform: scale(1.1);
+        background-color: ${props => (props.dark? '#3f474f':'#f1f1f1')}
     }
 `
 
