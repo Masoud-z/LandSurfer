@@ -120,6 +120,34 @@ export const Error= styled.div`
     font-size: 4rem;
 `
 
+export const ScrollUpContainer = styled.h4`
+  position: fixed;
+  right: 0;
+  bottom: ${props=>(props.show ? '23vh' : '-20vh')};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: linear 0.4s;
+  color: ${props=>(props.dark?'white':'black')};
+  transform: rotate(90deg);
+  &:hover{
+    color: ${props=>(props.dark?'#aaa':'#888')};
+    cursor: pointer;
+  }
+  &::after{
+    content: '';
+    transform: rotate(90deg);
+    position: fixed;
+    width: 1px;
+    height: 22vh;
+    right: -12vh;
+    background-color: ${props=>(props.dark?'white':'black')};
+  }
+`
+
+
+
 
 
 

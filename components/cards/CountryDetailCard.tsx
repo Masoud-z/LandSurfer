@@ -33,7 +33,7 @@ const CountryDetailCard = (props:any) => {
         })
     },[])
 
-     console.log(borderCountries);
+
 
       const  borderCountriesBotton = borderCountries.map(borderCountry=>{
             console.log(borderCountry);

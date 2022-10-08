@@ -64,7 +64,7 @@ export const Grid = styled.div`
     grid-template-columns: 45% 45%;
     gap: 10%;
     margin-top: 7vh;
-    margin-bottom: 5vh;
+    margin-bottom: 12vh;
 
     & > img{
         max-height: 60vh;
