@@ -35,7 +35,7 @@ const ArengBar = () => {
              dark={darkMode}
              onChange={onChangeRegion}
              value={region}>
-                <option value="">Filter by Region</option>
+                <option value="">All Countries</option>
                 <option value="Africa">Africa</option>
                 <option value="North America">North America</option>
                 <option value="South America">South America</option>
