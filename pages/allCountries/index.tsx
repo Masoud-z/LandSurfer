@@ -1,5 +1,5 @@
 import React from 'react';
-import AllCountries from '../../components/Home/Home';
+import AllCountries from '../../components/AllCountries/AllCountries';
 
 const index = () => {
     return (

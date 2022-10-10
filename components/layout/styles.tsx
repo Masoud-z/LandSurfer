@@ -23,6 +23,30 @@ export const Header = styled.div`
     color: ${props =>(props.dark?'#fff':'#000')};
     box-shadow: 3px 3px 4px ${props =>(props.dark ? '#222' : '#ccc')};
     padding: 4vh 5vw;
+
+    & > h3{
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        &:hover{cursor: pointer;}
+    }
+`
+
+export const NavBar = styled.div`
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+`
+
+export const Options = styled.div`
+    padding: 0.5rem 1.5rem;
+    border-bottom: ${props => (props.activePage ? 'solid 2px red': 'none')};
+    color: ${props =>(props.dark?'#fff':'#000')};
+    &:hover{
+        cursor: pointer;
+        background-color: ${props =>(props.dark?'rgba(255, 255, 255,0.1)':'rgba(0, 0, 0,0.1)')};
+        border-radius: 2rem;
+    }
 `
 
 export const DarkModeContainer= styled.div`

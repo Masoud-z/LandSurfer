@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { ActivePage } from '../helper/ActivePage';
 import { CountryContext } from '../helper/CountryContext';
 import { Dark } from '../helper/Dark';
 import { RegionContext } from '../helper/RegionContext';
@@ -11,6 +12,8 @@ const AllCountries = () => {
     const [region, setRegion] = useState('');
     const [searchedCountry,setSearchedCountry] = useState('');
     const {darkMode, setDarkMode}:any = useContext(Dark);
+    const {active, setActive}:any = useContext(ActivePage);
+    setActive('All');
 
     const [scrollUp, setScrollUp] = useState(false);
 

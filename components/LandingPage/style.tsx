@@ -37,7 +37,7 @@ export const CTA = styled.div`
     padding-left: 3.5rem ;
     display: flex;
     gap: 5vh;
-    animation: ${appear} linear 3s;
+    animation: ${appear} linear 2s;
 ` 
 
 export const Img = styled.img`

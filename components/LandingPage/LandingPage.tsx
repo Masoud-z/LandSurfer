@@ -5,12 +5,15 @@ import { Dark } from '../helper/Dark';
 import { Btn, CTA, Description, Img, LandingPageContainer, Title } from './style';
 import Globe from '../../public/assets/globe.png';
 import Link from 'next/link';
+import { ActivePage } from '../helper/ActivePage';
 
 
 
 const LandingPage = () => {
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
+    const {active, setActive}:any = useContext(ActivePage);
+    setActive('');
 
     
     return (
@@ -25,6 +28,7 @@ const LandingPage = () => {
                         All Countries
                     </Btn>
                     </Link>
+
                     <Btn dark={darkMode}>Search</Btn>
                 </CTA>            
             </Description>
