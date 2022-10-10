@@ -4,10 +4,10 @@ import { Dark } from '../helper/Dark';
 import { RegionContext } from '../helper/RegionContext';
 import ArengBar from './ArengBar'
 import Countries from './Countries';
-import { ScrollUp, ScrollUpContainer } from './styles';
+import { ScrollUpContainer } from './styles';
 
 
-const Home = () => {
+const AllCountries = () => {
     const [region, setRegion] = useState('');
     const [searchedCountry,setSearchedCountry] = useState('');
     const {darkMode, setDarkMode}:any = useContext(Dark);
@@ -48,4 +48,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default AllCountries;

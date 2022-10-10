@@ -16,7 +16,7 @@ const Layout = (props:any) => {
         <Page  dark={darkMode}>
             <Header  dark={darkMode}>
                 <h3>Wher in the world?</h3>
-                <DarkModeContainer onClick={()=>setDarkMode((perv:boolean)=>!perv)}>
+                <DarkModeContainer dark={darkMode} onClick={()=>setDarkMode((perv:boolean)=>!perv)}>
                    {darkMode ? <BsFillMoonFill /> :<BsMoon />}
                     Dark Mode
                 </DarkModeContainer>
