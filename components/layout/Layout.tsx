@@ -31,17 +31,20 @@ const Layout = (props:any) => {
                         </Options>
                     </Link>
 
+
                     <Options 
                      dark={darkMode}
                      activePage={active=='Continents'} >
                         Continents
                     </Options>
 
-                    <Options  
-                     dark={darkMode}
-                     activePage={active=='Search'} >
-                        Search
-                    </Options>
+                    <Link href="./search">
+                        <Options  
+                         dark={darkMode}
+                         activePage={active=='Search'} >
+                            Search
+                        </Options>
+                    </Link>
                 </NavBar>
 
                 <DarkModeContainer dark={darkMode} onClick={()=>setDarkMode((perv:boolean)=>!perv)}>

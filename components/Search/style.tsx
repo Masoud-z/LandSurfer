@@ -2,7 +2,6 @@
 import { css,keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
-
 const rotate = keyframes`
     0% {
     transform: rotate(0deg);
@@ -21,19 +20,31 @@ const rotate = keyframes`
   }
 `
 
-
-
-export const Flex = styled.div`
+export const SearchContainer= styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin: 4vh 0 6vh;
-    color: ${props=>(props.dark?'white':'black')};
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const SearchBarContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem;
+    height: 10vh;
+    background-color:  ${props=>(props.dark?'#2b3743':'white')};
+    color: ${props=>(props.dark?'#fffeff':'#8b8b8b')};
+    padding: 0 1vw;
+    border-radius: 1rem;
+    font-size: 2rem;
+    
 `
 
 export const SearchBar = styled.input`
-  width: 25vw;
-  height: 6vh;
+  width: 50vw;
+  height: 100%;
   padding: 1vh 1vw;
   background-color: ${props=>(props.dark?'#2b3743':'white')};
   color: ${props=>(props.dark?'#fffeff':'#8b8b8b')};
@@ -43,35 +54,6 @@ export const SearchBar = styled.input`
   }
   @media screen and (max-width: 1024px) {
       width: 45vw;
-    }
-`
-
-
-export const SearchContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 6vh;
-    background-color:  ${props=>(props.dark?'#2b3743':'white')};
-    color: ${props=>(props.dark?'#fffeff':'#8b8b8b')};
-    padding: 0 1vw;
-    border-radius: 8px;
-    
-`
-
-export const Filter = styled.select`
-    width: 14vw;
-    height: 6vh;
-    padding: 1vh 1vw;
-    background-color: ${props=>(props.dark?'#2b3743':'white')};
-    color: ${props=>(props.dark?'white':'black')};
-    border: none;
-    border-radius: 8px;
-    &:focus{
-        border: none;
-    }
-    @media screen and (max-width: 1024px) {
-      width: 35vw;
     }
 `
 
@@ -119,36 +101,3 @@ export const Error= styled.div`
     color: ${props=>(props.dark?'white':'black')};
     font-size: 4rem;
 `
-
-export const ScrollUpContainer = styled.h4`
-  position: fixed;
-  right: 0;
-  bottom: ${props=>(props.show ? '23vh' : '-20vh')};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: linear 0.4s;
-  color: ${props=>(props.dark?'white':'black')};
-  transform: rotate(90deg);
-  &:hover{
-    color: ${props=>(props.dark?'#aaa':'#888')};
-    cursor: pointer;
-  }
-  &::after{
-    content: '';
-    transform: rotate(90deg);
-    position: fixed;
-    width: 1px;
-    height: 22vh;
-    right: -12vh;
-    background-color: ${props=>(props.dark?'white':'black')};
-  }
-`
-
-
-
-
-
-
-

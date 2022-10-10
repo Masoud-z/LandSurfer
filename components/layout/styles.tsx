@@ -7,11 +7,6 @@ export const Page = styled.div`
     height: 100%;
     background-color: ${props=>(props.dark? 'rgba(43, 43, 44,1)': '#fafafa')};
     overflow: hidden;
-    background-image: url('./world.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
 `
 
 export const Header = styled.div`
@@ -62,6 +57,10 @@ export const MainContainer = styled.div`
     width: 100%;
     min-height: 90vh;
     padding: 2vh 5vw;
+    background-image: url('./world.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 `
 
 

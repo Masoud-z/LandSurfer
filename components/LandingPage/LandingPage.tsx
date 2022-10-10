@@ -24,12 +24,16 @@ const LandingPage = () => {
                 </Title>
                 <CTA>
                     <Link href='/allCountries'>
-                    <Btn dark={darkMode}>
-                        All Countries
-                    </Btn>
+                        <Btn dark={darkMode}>
+                            All Countries
+                        </Btn>
                     </Link>
 
-                    <Btn dark={darkMode}>Search</Btn>
+                    <Link href="/search">
+                        <Btn dark={darkMode}>
+                            Search
+                        </Btn>
+                    </Link>
                 </CTA>            
             </Description>
                <Img src='./globe.png' alt="globe" width="70%"/>

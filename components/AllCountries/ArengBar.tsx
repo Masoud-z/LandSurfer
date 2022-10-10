@@ -27,7 +27,7 @@ const ArengBar = () => {
                 <SearchBar
                  dark={darkMode}
                  onChange={onChangeCountry}
-                 placeholder= 'Search for a countru...'
+                 placeholder= 'Search for a country...'
                  value={searchedCountry} />
             </SearchContainer>
 
