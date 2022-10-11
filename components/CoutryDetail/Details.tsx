@@ -15,7 +15,8 @@ const Details = (props:any) => {
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/alpha/${props.cca}`)
         .then(res => res.json())
-        .then(data =>{ setCountry(data[0]);
+        .then(data =>{ setCountry(data[0]);console.log(data[0]);
+        
         });
     },[])
      

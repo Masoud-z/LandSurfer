@@ -49,7 +49,7 @@ export const Btn = styled.button`
      background-color: transparent;
      border: none;
      color: ${props =>(props.dark?'#fff':'#000')};
-     border-radius: 5px;
+     border-radius: 8px;
      font-weight: bold;
      font-size: 1.2rem;
      transition: box-shadow 2s linear;;

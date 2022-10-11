@@ -2,9 +2,10 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import React, { useContext } from 'react';
-import { DarkModeContainer, Header, MainContainer, NavBar, Options, Page } from './styles';
+import React, { useContext, useState } from 'react';
+import { DarkModeContainer, Header, MainContainer, NavBar, Options, OptionsHolder, Page, Toggler } from './styles';
 import {BsFillMoonFill,BsMoon} from 'react-icons/bs'
+import {AiOutlineMenu} from 'react-icons/ai'
 import { Dark } from '../helper/Dark';
 import Link from 'next/link';
 import { ActivePage } from '../helper/ActivePage';
@@ -13,16 +14,32 @@ const Layout = (props:any) => {
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
     const {active, setActive}:any = useContext(ActivePage);
+    
+    const [showList, setShowList]:any= useState(false); 
+
+    function toggleHandler(){
+        setShowList(prev =>!prev)
+    }
 
     return (
         
         <Page  dark={darkMode}>
             <Header  dark={darkMode}>
                 <Link href='/'>
-                    <h3> Wher in the world?</h3>
+                    <h3> LandSurfer</h3>
                 </Link>
 
-                <NavBar>
+            
+
+                <NavBar >
+                    <Toggler
+                     dark={darkMode} 
+                     onClick={toggleHandler}
+                     show={showList}>
+                        <AiOutlineMenu />
+                    </Toggler>
+                    
+                    <OptionsHolder show={showList} ark={darkMode}>
                     <Link href='./allCountries'>
                         <Options 
                          dark={darkMode}
@@ -45,11 +62,12 @@ const Layout = (props:any) => {
                             Search
                         </Options>
                     </Link>
+                    </OptionsHolder>
                 </NavBar>
 
                 <DarkModeContainer dark={darkMode} onClick={()=>setDarkMode((perv:boolean)=>!perv)}>
                    {darkMode ? <BsFillMoonFill /> :<BsMoon />}
-                    Dark Mode
+                    <p>Dark Mode</p>
                 </DarkModeContainer>
             </Header>
             <MainContainer>

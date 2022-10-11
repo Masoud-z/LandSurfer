@@ -21,17 +21,19 @@ const CountryDetailCard = (props:any) => {
 
 
     useEffect(()=>{
-        const totalCountofAllCountries = props.borders.length
-        let allCountries:any[] = []
-        props.borders.map(async countryCode=>{
-            const resp = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
-            const countryJson = await resp.json()
-            allCountries.push(countryJson[0])
-            if(allCountries.length === totalCountofAllCountries){
-                setBorderCountries(allCountries)
-            }
-        })
-    },[])
+       if(props.borders){
+            const totalCountofAllCountries = props.borders.length;
+            let allCountries:any[] = []
+            props.borders.map(async countryCode=>{
+                const resp = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
+                const countryJson = await resp.json()
+                allCountries.push(countryJson[0])
+                if(allCountries.length === totalCountofAllCountries){
+                    setBorderCountries(allCountries)
+                }
+            })
+        }
+    },[props])
 
 
 
