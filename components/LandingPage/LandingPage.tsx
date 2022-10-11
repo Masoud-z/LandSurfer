@@ -20,7 +20,7 @@ const LandingPage = () => {
         <LandingPageContainer>   
             <Description>
                 <Title  dark={darkMode}>
-                    Get <br /> All Information <br /> You need <br /> About Countries
+                    Get All Information You need About Countries
                 </Title>
                 <CTA>
                     <Link href='/allCountries'>

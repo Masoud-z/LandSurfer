@@ -12,7 +12,7 @@ export const Page = styled.div`
 export const Header = styled.div`
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     background-color: ${props=>(props.dark? 'rgb(43, 43, 44)': '#fff')};
     color: ${props =>(props.dark?'#fff':'#000')};
@@ -75,7 +75,7 @@ export const OptionsHolder = styled.div`
 `
 
 export const Options = styled.div`
-    padding: 0rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-bottom: ${props => (props.activePage ? 'solid 2px red': 'none')};
     color: ${props =>(props.dark?'#fff':'#000')};
     &:hover{

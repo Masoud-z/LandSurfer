@@ -14,14 +14,22 @@ export const LandingPageContainer = styled.div`
     margin-top: 4vh;
     display: grid;
     grid-template-columns: 47% 48%;
+    justify-content: center;
     gap: 5%;
     overflow: visible;
     padding: 2rem;
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: 80%;
+        text-align: center;
+        } 
 `
 
 export const Description = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    
 `
 
 export const Title = styled.h1`
@@ -30,18 +38,27 @@ export const Title = styled.h1`
     color: ${props =>(props.dark?'#fff':'#000')};
     font-size: 3.5rem;
     text-shadow: 10px 10px 4px ${props =>(props.dark ? '#000' : '#ccc')};
-    margin: auto;
+    @media screen and (max-width: 600px){
+        font-size: 2rem;
+    }
 `
 
 export const CTA = styled.div`
-    padding-left: 3.5rem ;
+    padding-left: 1rem ;
     display: flex;
+    justify-content: center;
     gap: 5vh;
     animation: ${appear} linear 2s;
 ` 
 
 export const Img = styled.img`
     margin: auto;
+    @media screen and (max-width: 1000px){
+        grid-area: 1/1/1/1;
+    }
+    @media screen and (max-width: 600px){
+        display: none;
+    }
 `
 
 export const Btn = styled.button`
