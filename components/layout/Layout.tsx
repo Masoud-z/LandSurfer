@@ -39,8 +39,10 @@ const Layout = (props:any) => {
                         <AiOutlineMenu />
                     </Toggler>
                     
-                    <OptionsHolder show={showList} ark={darkMode}>
-                    <Link href='./allCountries'>
+                    <OptionsHolder
+                     show={showList} 
+                     dark={darkMode}>
+                    <Link href='/allCountries'>
                         <Options 
                          dark={darkMode}
                          activePage={active=='All'}>
@@ -49,13 +51,15 @@ const Layout = (props:any) => {
                     </Link>
 
 
-                    <Options 
-                     dark={darkMode}
-                     activePage={active=='Continents'} >
-                        Continents
-                    </Options>
+                    <Link href='/continents'>
+                        <Options 
+                         dark={darkMode}
+                         activePage={active=='Continents'} >
+                            Continents
+                        </Options>
+                    </Link>
 
-                    <Link href="./search">
+                    <Link href="/search">
                         <Options  
                          dark={darkMode}
                          activePage={active=='Search'} >

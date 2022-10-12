@@ -67,7 +67,7 @@ export const OptionsHolder = styled.div`
             position: absolute;
             flex-direction: column;
             top: 8vh;
-            background-color:${props =>(props.dark?'#fff':'#000')}; 
+            background-color:${props =>(props.dark? '#2b3743':'white')}; 
             transform: translateX(-43%);
             border-radius: 1rem;;
         }

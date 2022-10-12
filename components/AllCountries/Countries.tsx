@@ -11,6 +11,7 @@ const Countries = () => {
     const [countries, setCountries] = useState([]);
     const [showLoading, setshowLoading] = useState(true);
     const [errorHandler, setErrorHandler] = useState(false);
+    
     const {region, setRegion}:any = useContext(RegionContext);
     const {searchedCountry,setSearchedCountry}:any = useContext(CountryContext);
     const {darkMode, setDarkMode}:any = useContext(Dark);
