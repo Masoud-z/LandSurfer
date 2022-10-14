@@ -9,8 +9,8 @@ import { Loading, SearchBar, SearchBarContainer, SearchContainer, Error, Grid } 
 const Search = () => {
 
     const [searchedText, setsearchedText] = useState('');
-    const [countries, setCountries] = useState([]);
-    const [errorHandler, setErrorHandler] = useState(false);
+    const [countries, setCountries]:any = useState([]);
+    const [errorHandler, setErrorHandler]:any = useState([]);
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
     const {active, setActive}:any = useContext(ActivePage);
@@ -18,20 +18,21 @@ const Search = () => {
     setActive('Search')
 
     useEffect(()=>{
+        
         fetch(`https://restcountries.com/v3.1/name/${searchedText}`)
-            .then(res => res.json())
-            .then(data =>{ 
-                if(data.status) {
-                    setErrorHandler(true);setCountries([]);}
-                else {
-                    setCountries(data); setErrorHandler(false);
-                }
-         });
+        .then(res => res.json())
+        .then(data =>{ 
+            if(data.status) {
+                setErrorHandler(['Country not Found']);setCountries([]);}
+            else {
+                setCountries(data); setErrorHandler(['']);
+            }
+        });  
     },[searchedText])
 
     let CountriesCard:any =[];
 
-    if(countries.length > 0){
+    if(countries.length > 0 && searchedText.length > 0){
         CountriesCard= countries.map(country =>{ 
         return(  
            <Country
@@ -62,11 +63,13 @@ const Search = () => {
                  value={searchedText} />
             </SearchBarContainer>
 
-            {countries.length == 0 && !errorHandler && searchedText.length > 0 && <Loading dark={darkMode}>
+            {countries.length == 0 && !errorHandler && searchedText.length > 0 &&
+             <Loading dark={darkMode}>
                 <RiLoader2Fill />
             </Loading>}
+            
             {errorHandler && <Error dark={darkMode}>
-                    Country not Found
+                   {errorHandler}
                 </Error>}
             <Grid>
                {CountriesCard}

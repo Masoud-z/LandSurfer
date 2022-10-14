@@ -81,7 +81,7 @@ export const Loading = styled.div`
     text-align: center;
     position: relative;
     top: 30vh;
-    right: -50%;
+    /* right: 50%; */
     color: ${props=>(props.dark?'white':'black')};
     font-size: 4rem;
     animation: ${rotate} 2s linear infinite;
@@ -96,8 +96,6 @@ export const Error= styled.div`
     text-align: center;
     position: relative;
     top: 30vh;
-    right: -50%;
-    transform: translateX(-50%);
     color: ${props=>(props.dark?'white':'black')};
     font-size: 4rem;
 `
