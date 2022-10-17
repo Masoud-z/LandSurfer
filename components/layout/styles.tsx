@@ -40,6 +40,7 @@ export const NavBar = styled.div`
         } 
 `
 
+
 export const Toggler = styled.div`
     color: ${props =>(props.dark?'#fff':'#000')};
     transition: linear 0.4s;
@@ -63,7 +64,7 @@ export const OptionsHolder = styled.div`
     justify-content: center;
     transition: linear 0.4s;
     @media screen and (max-width: 601px) {
-            display: ${props =>(props.show ? 'flex' : 'none' )};
+            display: ${props=>(props.show ? 'flex':'none')};
             position: absolute;
             flex-direction: column;
             top: 8vh;
@@ -78,9 +79,13 @@ export const Options = styled.div`
     padding: 0.5rem 1.5rem;
     border-bottom: ${props => (props.activePage ? 'solid 2px red': 'none')};
     color: ${props =>(props.dark?'#fff':'#000')};
+    background-image: linear-gradient(${props =>(props.dark?'rgba(255, 255, 255,0.1)':'rgba(0, 0, 0,0.1)')},${props =>(props.dark?'rgba(255, 255, 255,0.1)':'rgba(0, 0, 0,0.1)')});
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: 0.4s;
     &:hover{
         cursor: pointer;
-        background-color: ${props =>(props.dark?'rgba(255, 255, 255,0.1)':'rgba(0, 0, 0,0.1)')};
+        background-size: 100% 100%;
         border-radius: 2rem;
     }
     @media screen and (max-width: 601px) {

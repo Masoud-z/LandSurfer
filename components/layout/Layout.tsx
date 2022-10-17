@@ -31,16 +31,17 @@ const Layout = (props:any) => {
 
             
 
-                <NavBar >
+                <NavBar
+                  onMouseEnter={toggleHandler}
+                  onMouseLeave={toggleHandler} >
                     <Toggler
                      dark={darkMode} 
-                     onClick={toggleHandler}
                      show={showList}>
                         <AiOutlineMenu />
                     </Toggler>
                     
                     <OptionsHolder
-                     show={showList} 
+                     show={showList}
                      dark={darkMode}>
                     <Link href='/allCountries'>
                         <Options 
