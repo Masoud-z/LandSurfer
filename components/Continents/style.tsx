@@ -35,6 +35,7 @@ export const AllContinentsContainer = styled.div`
 `
 
 export const ContinentContainer = styled.div`
+padding: 1rem;
     width: 100%;
     height: 30vh;
     display: flex;
@@ -68,10 +69,13 @@ export const ContinentContainer = styled.div`
 `
 
 export const Flag = styled.img`
+    margin: 0.5rem;
     height: 100%;
-    padding: 1rem 1rem;
+    transition: linear 0.4s;
     &:hover{
         cursor: pointer;
+        border: 1px solid red;
+        scale: 1.05;
     }
 `
 

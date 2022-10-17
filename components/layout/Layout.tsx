@@ -23,7 +23,11 @@ const Layout = (props:any) => {
 
     return (
         
-        <Page  dark={darkMode}>
+        <Page
+         dark={darkMode}
+         onClick={()=>{
+            if(showList){setShowList(false)}
+         }}>
             <Header  dark={darkMode}>
                 <Link href='/'>
                     <h3> LandSurfer</h3>
@@ -36,7 +40,8 @@ const Layout = (props:any) => {
                   onMouseLeave={toggleHandler} >
                     <Toggler
                      dark={darkMode} 
-                     show={showList}>
+                     show={showList}
+                     onClick={toggleHandler}>
                         <AiOutlineMenu />
                     </Toggler>
                     
