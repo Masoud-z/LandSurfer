@@ -9,15 +9,21 @@ const Asia = () => {
     const {darkMode, setDarkMode}:any = useContext(Dark);
     
     const [asia, setAsia]:any = useState([]);
+    const [errorHandler, setErrorHandler] = useState('');
 
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/region/Asia`)
         .then(res => res.json())
-        .then(data =>{setAsia(data.slice(0,10))});
+        .then(data =>{setAsia(data.slice(0,10)); setErrorHandler('')})
+        .catch(()=>setErrorHandler('Could not Connect to The Server'));
     },[])
 
-    const AsiaCard= asia.map(country =>{ 
+    let AsiaCard
+    if(errorHandler) AsiaCard = errorHandler;
+    else {AsiaCard = asia.map(country =>{ 
         return(
+            <>
+            {errorHandler && <h2>{errorHandler}</h2>}
             <Link
              href={`./${country.cca3}`} 
              key={country.name} >
@@ -25,8 +31,9 @@ const Asia = () => {
                  src={country.flags.png} 
                  key={country.flags.png}/>
             </Link>
+            </>
         )
-    });
+    });}
 
     if(asia.length == 10){
     AsiaCard.push(<Link href='./continents/Asia'><h3>more...</h3></Link>)}

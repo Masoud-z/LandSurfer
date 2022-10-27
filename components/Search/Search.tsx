@@ -10,7 +10,7 @@ const Search = () => {
 
     const [searchedText, setsearchedText] = useState('');
     const [countries, setCountries]:any = useState([]);
-    const [errorHandler, setErrorHandler]:any = useState([]);
+    const [errorHandler, setErrorHandler]:any = useState('');
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
     const {active, setActive}:any = useContext(ActivePage);
@@ -23,11 +23,12 @@ const Search = () => {
         .then(res => res.json())
         .then(data =>{ 
             if(data.status) {
-                setErrorHandler(['Country not Found']);setCountries([]);}
+                setErrorHandler('Country not Found');setCountries([]);}
             else {
-                setCountries(data); setErrorHandler(['']);
+                setCountries(data); setErrorHandler('');
             }
-        });  
+        })
+        .catch(()=>setErrorHandler('Could not Connect to The Server'));  
     },[searchedText])
 
     let CountriesCard:any =[];

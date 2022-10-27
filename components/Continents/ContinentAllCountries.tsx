@@ -8,7 +8,7 @@ import { ActivePage } from '../helper/ActivePage';
 const ContinentAllCountries = (props:any) => {
     const [countries, setCountries] = useState([]);
     const [showLoading, setshowLoading] = useState(true);
-    const [errorHandler, setErrorHandler] = useState(false);
+    const [errorHandler, setErrorHandler] = useState('');
     const [scrollUp, setScrollUp] = useState(false);
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
@@ -18,8 +18,9 @@ const ContinentAllCountries = (props:any) => {
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/region/${props.region}`)
             .then(res => res.json())
-            .then(data =>{data.status ? setErrorHandler(true)
-                : setCountries(data), setErrorHandler(false);});
+            .then(data =>{data.status ? setErrorHandler('Continent not Found')
+                : setCountries(data), setErrorHandler('');})
+            .catch(()=>setErrorHandler('Could not Connect to the Server'));
                 console.log("region");
     },[])
 
@@ -63,7 +64,7 @@ const ContinentAllCountries = (props:any) => {
                 <RiLoader2Fill />
              </Loading>}
             { errorHandler && <Error dark={darkMode}>
-                    Country not Found
+                    {errorHandler}
                 </Error>}
             <Grid>
                {CountriesCard}

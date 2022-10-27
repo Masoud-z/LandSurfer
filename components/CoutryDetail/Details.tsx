@@ -8,16 +8,18 @@ import {RiLoader2Fill} from 'react-icons/ri'
 
 const Details = (props:any) => {
     const [country, setCountry] = useState('') ;
+    const [errorHandler, setErrorHandler] = useState('');
+
     const {darkMode, setDarkMode}:any = useContext(Dark);
+    
 
     console.log(props.cca);
     
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/alpha/${props.cca}`)
         .then(res => res.json())
-        .then(data =>{ setCountry(data[0]);console.log(data[0]);
-        
-        });
+        .then(data =>{ setCountry(data[0]);console.log(data[0]); setErrorHandler('')})
+        .catch(()=>setErrorHandler('Could not Connect to the Server'));
     },[])
      
     console.log(country);
@@ -41,6 +43,7 @@ const Details = (props:any) => {
             />
          : <Loading dark={darkMode}><RiLoader2Fill/></Loading>}
         
+        {errorHandler && <h2>{errorHandler}</h2>}
         </>
     );
 };
