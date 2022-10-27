@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 
 import { Dark } from '../helper/Dark';
-import { Flag } from './style';
+import { Flag, LoadingContinent } from './style';
 
 const Asia = () => {
 
@@ -20,10 +20,10 @@ const Asia = () => {
 
     let AsiaCard
     if(errorHandler) AsiaCard = errorHandler;
+    else if(asia.length == 0 ) {AsiaCard = <LoadingContinent dark={darkMode}>Loading...</LoadingContinent>}
     else {AsiaCard = asia.map(country =>{ 
         return(
             <>
-            {errorHandler && <h2>{errorHandler}</h2>}
             <Link
              href={`./${country.cca3}`} 
              key={country.name} >

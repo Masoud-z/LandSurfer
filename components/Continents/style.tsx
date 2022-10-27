@@ -44,7 +44,7 @@ padding: 1rem;
     background-color: ${props=>(props.dark? '#2b3743': 'white')};
     overflow: hidden;
     overflow-x: scroll;
-    border-radius: 1rem;
+    border-radius: 2rem;
 
     &::-webkit-scrollbar {
       height: 5px;
@@ -149,4 +149,8 @@ export const ScrollUpContainer = styled.h4`
     right: -12vh;
     background-color: ${props=>(props.dark?'white':'black')};
   }
+`
+
+export const LoadingContinent = styled.div`
+  color: ${props=>(props.dark?'white':'black')};
 `

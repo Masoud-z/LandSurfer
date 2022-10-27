@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 
 import { Dark } from '../helper/Dark';
-import { Flag } from './style';
+import { Flag, LoadingContinent } from './style';
 
 const Oceania = () => {
 
@@ -20,6 +20,7 @@ const Oceania = () => {
 
     let OceaniaCard;
     if(errorHandler) OceaniaCard = errorHandler;
+    else if(oceania.length == 0 ) {OceaniaCard = <LoadingContinent dark={darkMode}>Loading...</LoadingContinent>}
     else { OceaniaCard = oceania.map(country =>{ 
         return(
             <>
