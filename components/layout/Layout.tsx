@@ -9,6 +9,7 @@ import {AiOutlineMenu} from 'react-icons/ai'
 import { Dark } from '../helper/Dark';
 import Link from 'next/link';
 import { ActivePage } from '../helper/ActivePage';
+import Head from 'next/head';
 
 const Layout = (props:any) => {
 
@@ -28,6 +29,10 @@ const Layout = (props:any) => {
          onClick={()=>{
             if(showList){setShowList(false)}
          }}>
+            <Head>
+                <title>LandSurfer</title>
+                <link rel='icon' href='/globe.png'/>
+            </Head>
             <Header  dark={darkMode}>
                 <Link href='/'>
                     <h3> LandSurfer</h3>
