@@ -19,7 +19,7 @@ const Layout = (props:any) => {
     const [showList, setShowList]:any= useState(false); 
 
     function toggleHandler(){
-        setShowList(prev =>!prev)
+        setShowList((prev:boolean)=>!prev)
     }
 
     return (
