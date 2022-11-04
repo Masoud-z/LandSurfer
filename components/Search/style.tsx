@@ -2,6 +2,11 @@
 import { css,keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
+type CustomProps = {
+	dark: boolean;
+	show?: boolean;
+};
+
 const rotate = keyframes`
     0% {
     transform: rotate(0deg);
@@ -28,7 +33,7 @@ export const SearchContainer= styled.div`
     align-items: center;
 `
 
-export const SearchBarContainer = styled.div`
+export const SearchBarContainer = styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +47,7 @@ export const SearchBarContainer = styled.div`
     
 `
 
-export const SearchBar = styled.input`
+export const SearchBar = styled.input<CustomProps>`
   width: 50vw;
   height: 100%;
   padding: 1vh 1vw;
@@ -72,7 +77,7 @@ export const Grid = styled.div`
     }
 `
 
-export const Loading = styled.div`
+export const Loading = styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,7 +92,7 @@ export const Loading = styled.div`
     animation: ${rotate} 2s linear infinite;
 `
 
-export const Error= styled.div`
+export const Error= styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
