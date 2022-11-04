@@ -21,7 +21,7 @@ const Asia = () => {
     let AsiaCard
     if(errorHandler) AsiaCard = errorHandler;
     else if(asia.length == 0 ) {AsiaCard = <LoadingContinent dark={darkMode}>Loading...</LoadingContinent>}
-    else {AsiaCard = asia.map(country =>{ 
+    else {AsiaCard = asia.map((country:any) =>{ 
         return(
             <>
             <Link

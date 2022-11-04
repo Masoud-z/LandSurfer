@@ -24,7 +24,7 @@ const ContinentAllCountries = (props:any) => {
                 console.log("region");
     },[])
 
-    const CountriesCard= countries.map(country =>{ 
+    const CountriesCard= countries.map((country:any) =>{ 
         return(  
            <Country
              key={country.name.common} 

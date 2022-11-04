@@ -21,7 +21,7 @@ const Oceania = () => {
     let OceaniaCard;
     if(errorHandler) OceaniaCard = errorHandler;
     else if(oceania.length == 0 ) {OceaniaCard = <LoadingContinent dark={darkMode}>Loading...</LoadingContinent>}
-    else { OceaniaCard = oceania.map(country =>{ 
+    else { OceaniaCard = oceania.map((country:any) =>{ 
         return(
             <>
             {errorHandler && <h2>{errorHandler}</h2>}

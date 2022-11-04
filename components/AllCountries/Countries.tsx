@@ -54,7 +54,7 @@ const Countries = () => {
     
     console.log(countries);
     
-    const CountriesCard= countries.map(country =>{ 
+    const CountriesCard= countries.map((country:any) =>{ 
         return(  
            <Country
              key={country.name.common} 

@@ -21,7 +21,7 @@ const Europe = () => {
     let EuropeCard;
     if(errorHandler) EuropeCard = errorHandler;
     else if(europe.length == 0 ) {EuropeCard = <LoadingContinent dark={darkMode}>Loading...</LoadingContinent>}
-    else{EuropeCard = europe.map(country =>{ 
+    else{EuropeCard = europe.map((country:any) =>{ 
         return(
             <>
             <Link

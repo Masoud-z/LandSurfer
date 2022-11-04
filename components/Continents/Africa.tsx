@@ -22,7 +22,7 @@ const Africa = () => {
     let AfricaCard;
     if(errorHandler) AfricaCard = errorHandler;
     else if(africa.length == 0 ) {AfricaCard = <LoadingContinent dark={darkMode}>Loading...</LoadingContinent>}
-    else {AfricaCard = africa.map(country =>{ 
+    else {AfricaCard = africa.map((country:any) =>{ 
         return(
             <>
             <Link

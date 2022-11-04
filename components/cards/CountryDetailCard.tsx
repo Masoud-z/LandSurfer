@@ -1,17 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Dark } from '../helper/Dark';
-import { Button, Flex, FlexColumn, Grid, Loading, Neighbour } from './styles';
-import {RiLoader2Fill} from 'react-icons/ri'
+import { Button, Flex, FlexColumn, Grid} from './styles';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const CountryDetailCard = (props:any) => {
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
-    const nativeName = Object.values(props.native)[0];
-    const currencies = Object.values(props.currencies).map(currency=>currency.name);
+    const nativeName:any = Object.values(props.native)[0];
+    const currencies = Object.values(props.currencies).map((currency:any)=>currency.name);
     const languages = Object.values(props.languages);
     const [borderCountries,setBorderCountries] = useState<any[]>([]);
 
@@ -24,7 +23,7 @@ const CountryDetailCard = (props:any) => {
        if(props.borders){
             const totalCountofAllCountries = props.borders.length;
             let allCountries:any[] = []
-            props.borders.map(async countryCode=>{
+            props.borders.map(async (countryCode:any)=>{
                 const resp = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
                 const countryJson = await resp.json()
                 allCountries.push(countryJson[0])
