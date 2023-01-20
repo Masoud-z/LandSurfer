@@ -28,7 +28,10 @@ const Search = () => {
                 setCountries(data); setErrorHandler('');
             }
         })
-        .catch(()=>setErrorHandler('Could not Connect to The Server'));  
+        .catch(()=>{
+            setErrorHandler('Could not Connect to The Server');
+            setCountries([]);
+        });  
     },[searchedText])
 
     let CountriesCard:any =[];
