@@ -10,4 +10,4 @@ Using Next.js and Emotion with TypeScript.
 
 </br>
 
-<img src="blob:https://picflow.com/69ac8bee-c5d2-4baa-9b67-d93a5a608719" />
+<img src="https://i.postimg.cc/MpByYvh4/landing-page.jpg" alt="LandSurfer" />
