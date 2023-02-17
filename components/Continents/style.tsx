@@ -2,6 +2,11 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
+type CustomProps = {
+	dark: boolean;
+	show?: boolean;
+};
+
 const rotate = keyframes`
     0% {
     transform: rotate(0deg);
@@ -21,7 +26,7 @@ const rotate = keyframes`
 `
 
 
-export const AllContinentsContainer = styled.div`
+export const AllContinentsContainer = styled.div<CustomProps>`
     margin: 0 ;
     display: flex;
     flex-direction: column;
@@ -34,7 +39,7 @@ export const AllContinentsContainer = styled.div`
     }
 `
 
-export const ContinentContainer = styled.div`
+export const ContinentContainer = styled.div<CustomProps>`
 padding: 1rem;
     width: 100%;
     height: 30vh;
@@ -95,7 +100,7 @@ export const Grid = styled.div`
     }
 `
 
-export const Loading = styled.div`
+export const Loading = styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,7 +115,7 @@ export const Loading = styled.div`
     animation: ${rotate} 2s linear infinite;
 `
 
-export const Error= styled.div`
+export const Error= styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,7 +130,7 @@ export const Error= styled.div`
     font-size: 4rem;
 `
 
-export const ScrollUpContainer = styled.h4`
+export const ScrollUpContainer = styled.h4<CustomProps>`
   position: fixed;
   right: 0;
   bottom: ${props=>(props.show ? '23vh' : '-20vh')};
@@ -151,6 +156,6 @@ export const ScrollUpContainer = styled.h4`
   }
 `
 
-export const LoadingContinent = styled.div`
+export const LoadingContinent = styled.div<CustomProps>`
   color: ${props=>(props.dark?'white':'black')};
 `

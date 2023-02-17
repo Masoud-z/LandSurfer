@@ -28,13 +28,16 @@ const Search = () => {
                 setCountries(data); setErrorHandler('');
             }
         })
-        .catch(()=>setErrorHandler('Could not Connect to The Server'));  
+        .catch(()=>{
+            setErrorHandler('Could not Connect to The Server');
+            setCountries([]);
+        });  
     },[searchedText])
 
     let CountriesCard:any =[];
 
     if(countries.length > 0 && searchedText.length > 0){
-        CountriesCard= countries.map(country =>{ 
+        CountriesCard= countries.map((country:any) =>{ 
         return(  
            <Country
              key={country.name.common} 

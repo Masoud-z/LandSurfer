@@ -3,6 +3,11 @@ import { css, keyframes} from '@emotion/react';
 import styled from '@emotion/styled';
 
 
+type CustomProps = {
+	dark: boolean;
+	show?: boolean;
+};
+
 const appear = keyframes`
     0%{opacity:0;}
     100%{opacity: 1;}
@@ -32,7 +37,7 @@ export const Description = styled.div`
     
 `
 
-export const Title = styled.h1`
+export const Title = styled.h1<CustomProps>`
     font-family: 'Old Standard TT', serif;
     font-weight: 700;
     color: ${props =>(props.dark?'#fff':'#000')};
@@ -61,7 +66,7 @@ export const Img = styled.img`
     }
 `
 
-export const Btn = styled.button`
+export const Btn = styled.button<CustomProps>`
      padding: 1.5rem 2rem;
      background-color: transparent;
      border: none;

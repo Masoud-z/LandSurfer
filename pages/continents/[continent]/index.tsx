@@ -4,7 +4,6 @@ import ContinentAllCountries from '../../../components/Continents/ContinentAllCo
 
 const Continent = () => {
     const router = useRouter();
-    console.log(router.query.continent);
     return (
         <div>
             <ContinentAllCountries region={router.query.continent} />

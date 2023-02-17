@@ -2,6 +2,12 @@
 import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
+type CustomProps = {
+	dark: boolean;
+	show?: boolean;
+};
+
+
 const rotate = keyframes`
     0% {
     transform: rotate(0deg);
@@ -21,7 +27,7 @@ const rotate = keyframes`
 `
 
 
-export const Flex = styled.div`
+export const Flex = styled.div<CustomProps>`
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -29,7 +35,7 @@ export const Flex = styled.div`
     color: ${props=>(props.dark?'white':'black')};
 `
 
-export const Button = styled.button`
+export const Button = styled.button<CustomProps>`
     color: ${props=>(props.dark?'white':'black')};
     background-color: ${props=>(props.dark?'#2b3743':'white')};
     padding: 0.5rem 1.5rem;
@@ -50,7 +56,7 @@ export const Button = styled.button`
 ` 
 
 
-export const Loading = styled.div`
+export const Loading = styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;

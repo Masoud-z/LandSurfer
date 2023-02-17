@@ -3,8 +3,13 @@ import { css, keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 
+type CustomProps = {
+	dark: boolean;
+	show?: boolean;
+};
 
-export const CountryCard = styled.div`
+
+export const CountryCard = styled.div<CustomProps>`
     /* width: 19.9vw; */
     padding: 0;
     display: flex;
@@ -27,7 +32,7 @@ export const CountryCard = styled.div`
     }
 `
 
-export const CountryCardDitail = styled.div`
+export const CountryCardDitail = styled.div<CustomProps>`
     display: flex;
     flex-direction: column;
     padding: 3vh 1vw 1.5vh;
@@ -42,7 +47,7 @@ export const CountryCardDitail = styled.div`
     }
 `
 
-export const Flex = styled.div`
+export const Flex = styled.div<CustomProps>`
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -81,7 +86,7 @@ export const Grid = styled.div`
     }
 `
 
-export const FlexColumn = styled.div`
+export const FlexColumn = styled.div<CustomProps>`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -101,7 +106,7 @@ export const FlexColumn = styled.div`
     }
 `
 
-export const Button = styled.button`
+export const Button = styled.button<CustomProps>`
     color: ${props=>(props.dark?'white':'black')};
     background-color: ${props=>(props.dark?'#2b3743':'white')};
     padding: 0.5rem 1.5rem;
@@ -115,7 +120,7 @@ export const Button = styled.button`
     }    
 `
 
-export const Neighbour = styled.div`
+export const Neighbour = styled.div<CustomProps>`
     width: 100%;
     display: flex;
     justify-content: space-between;

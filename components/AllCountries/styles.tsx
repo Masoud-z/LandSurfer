@@ -3,6 +3,11 @@ import { css,keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 
+type CustomProps = {
+	dark: boolean;
+	show?: boolean;
+};
+
 const rotate = keyframes`
     0% {
     transform: rotate(0deg);
@@ -23,7 +28,7 @@ const rotate = keyframes`
 
 
 
-export const Flex = styled.div`
+export const Flex = styled.div<CustomProps>`
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -31,7 +36,7 @@ export const Flex = styled.div`
     color: ${props=>(props.dark?'white':'black')};
 `
 
-export const SearchBar = styled.input`
+export const SearchBar = styled.input<CustomProps>`
   width: 25vw;
   height: 6vh;
   padding: 1vh 1vw;
@@ -47,7 +52,7 @@ export const SearchBar = styled.input`
 `
 
 
-export const SearchContainer = styled.div`
+export const SearchContainer = styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +64,7 @@ export const SearchContainer = styled.div`
     
 `
 
-export const Filter = styled.select`
+export const Filter = styled.select<CustomProps>`
     width: 14vw;
     height: 6vh;
     padding: 1vh 1vw;
@@ -90,7 +95,7 @@ export const Grid = styled.div`
     }
 `
 
-export const Loading = styled.div`
+export const Loading = styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,7 +110,7 @@ export const Loading = styled.div`
     animation: ${rotate} 2s linear infinite;
 `
 
-export const Error= styled.div`
+export const Error= styled.div<CustomProps>`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +125,7 @@ export const Error= styled.div`
     font-size: 4rem;
 `
 
-export const ScrollUpContainer = styled.h4`
+export const ScrollUpContainer = styled.h4<CustomProps>`
   position: fixed;
   right: 0;
   bottom: ${props=>(props.show ? '23vh' : '-20vh')};
