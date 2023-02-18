@@ -3,7 +3,7 @@
 A website presenting brief data about all countries across the world.
 </br>
 :globe_with_meridians: Live: https://land-surfer.vercel.app/
-</br>
+</br></br>
 Using Next.js and Emotion with TypeScript.
 <div align="center">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" title="Typescript" alt="Typescript" width="40" height="40"  />&nbsp;
