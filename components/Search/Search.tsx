@@ -8,31 +8,14 @@ import { Loading, SearchBar, SearchBarContainer, SearchContainer, Error, Grid } 
 
 const Search = () => {
 
-    const [searchedText, setsearchedText] = useState('');
-    const [countries, setCountries]:any = useState([]);
-    const [errorHandler, setErrorHandler]:any = useState('');
+	let lastReturnedSearchCount = useRef(0);
+	const searchDebounceTimerId = useRef<any>();
+	useEffect(() => {
 
-    const {darkMode, setDarkMode}:any = useContext(Dark);
-    const {active, setActive}:any = useContext(ActivePage);
-    
-    setActive('Search')
-
-    useEffect(()=>{
-        
-        fetch(`https://restcountries.com/v3.1/name/${searchedText}`)
-        .then(res => res.json())
-        .then(data =>{ 
-            if(data.status) {
-                setErrorHandler('Country not Found');setCountries([]);}
-            else {
-                setCountries(data); setErrorHandler('');
-            }
-        })
-        .catch(()=>{
-            setErrorHandler('Could not Connect to The Server');
-            setCountries([]);
-        });  
-    },[searchedText])
+		return new Promise((resolve, reject) => {
+			clearTimeout(searchDebounceTimerId.current);
+			searchDebounceTimerId.current = setTimeout(() => {
+				fetch(`https://restcountries.com/v3.1/name/${searchText}`)
 
     let CountriesCard:any =[];
 
