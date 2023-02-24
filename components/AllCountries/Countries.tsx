@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { Error, Grid, Loading } from "./styles";
 import Country from "../cards/Country";
 import { RiLoader2Fill } from "react-icons/ri";
@@ -16,8 +16,9 @@ const Countries = () => {
     useContext(CountryContext);
   const { darkMode, setDarkMode }: any = useContext(Dark);
 
-  let searchCount = 0;
-  let lastReturnedSearchCount = 0;
+  let searchCount = useRef(0);
+  let lastReturnedSearchCount = useRef(0);
+  const searchDebounceTimerId = useRef<any>();
   useEffect(() => {
     if (region != "") {
       setCountries([]);
@@ -34,11 +35,11 @@ const Countries = () => {
     if (searchedCountry != "") {
       setCountries([]);
       setRegion("");
-      searchCount++;
-      fetchCountries(searchedCountry, searchCount)
+      searchCount.current++;
+      fetchCountries(searchedCountry, searchCount.current)
         .then((data) => {
-          if (data.searchCount > lastReturnedSearchCount) {
-            lastReturnedSearchCount = data.searchCount;
+          if (data.searchCount > lastReturnedSearchCount.current) {
+            lastReturnedSearchCount.current = data.searchCount;
             if (data.data.status) {
               setErrorHandler("Country not Found");
               setCountries([]);
@@ -71,14 +72,17 @@ const Countries = () => {
     searchCount: number
   ): Promise<{ searchCount: number; data: any }> => {
     return new Promise((resolve, reject) => {
-      fetch(`https://restcountries.com/v3.1/name/${searchText}`)
-        .then((res) => res.json())
-        .then((data) => {
-          resolve({ searchCount, data });
-        })
-        .catch(() => {
-          reject();
-        });
+      clearTimeout(searchDebounceTimerId.current);
+      searchDebounceTimerId.current = setTimeout(() => {
+        fetch(`https://restcountries.com/v3.1/name/${searchText}`)
+          .then((res) => res.json())
+          .then((data) => {
+            resolve({ searchCount, data });
+          })
+          .catch(() => {
+            reject();
+          });
+      }, 500);
     });
   };
 
