@@ -21,7 +21,6 @@ const ContinentAllCountries = (props:any) => {
             .then(data =>{data.status ? setErrorHandler('Continent not Found')
                 : setCountries(data), setErrorHandler('');})
             .catch(()=>setErrorHandler('Could not Connect to the Server'));
-                console.log("region");
     },[])
 
     const CountriesCard= countries.map((country:any) =>{ 
@@ -46,7 +45,6 @@ const ContinentAllCountries = (props:any) => {
 	}, []);
 
     function scrollBehavior(){
-        console.log(window.scrollY);
         if(window.scrollY > window.innerHeight*0.5){
             setScrollUp(true);
         } else {setScrollUp(false);} 

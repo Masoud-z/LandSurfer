@@ -12,8 +12,6 @@ const Details = (props:any) => {
 
     const {darkMode, setDarkMode}:any = useContext(Dark);
     
-
-    console.log(props.cca);
     
     useEffect(()=>{
         fetch(`https://restcountries.com/v3.1/alpha/${props.cca}`)

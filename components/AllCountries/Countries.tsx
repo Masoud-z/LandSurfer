@@ -30,7 +30,6 @@ const Countries = () => {
             : setCountries(data),
             setErrorHandler("");
         });
-      console.log("region");
     }
     if (searchedCountry != "") {
       setCountries([]);
@@ -63,7 +62,6 @@ const Countries = () => {
           setCountries(data);
         })
         .catch(() => setErrorHandler("Could not Connect to the Server"));
-      console.log("all");
     }
   }, [region, searchedCountry]);
 

@@ -4,7 +4,6 @@ import CountryDetails from '../../components/CoutryDetail/CountryDetails';
 
 const CountryDetailsPage = () => {
     const router = useRouter();
-    console.log(router.asPath);
     
 
     return (

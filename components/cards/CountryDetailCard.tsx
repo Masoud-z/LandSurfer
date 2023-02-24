@@ -37,7 +37,6 @@ const CountryDetailCard = (props:any) => {
 
 
       const  borderCountriesBotton = borderCountries.map(borderCountry=>{
-            console.log(borderCountry);
             return(
                 <Link 
                  key={borderCountry.cca3}

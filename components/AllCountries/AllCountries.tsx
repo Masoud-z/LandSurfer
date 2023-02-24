@@ -25,7 +25,6 @@ const AllCountries = () => {
 	}, []);
 
     function scrollBehavior(){
-        console.log(window.scrollY);
         if(window.scrollY > window.innerHeight*0.5){
             setScrollUp(true);
         } else {setScrollUp(false);} 
