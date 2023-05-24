@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app'
 import Layout from '../components/layout/Layout'
 import { Dark } from '../components/helper/Dark'
 import { ActivePage } from '../components/helper/ActivePage'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 function MyApp({ Component, pageProps }: AppProps) {

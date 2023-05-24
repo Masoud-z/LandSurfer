@@ -5,6 +5,7 @@ import { Dark } from '../helper/Dark';
 import { Button, Flex, FlexColumn, Grid} from './styles';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const CountryDetailCard = (props:any) => {
 
@@ -55,7 +56,7 @@ const CountryDetailCard = (props:any) => {
     return (
 
         <Grid>
-          <img src={props.img} alt={props.name}/> 
+          <Image src={props.img} alt={props.name} width="100%" height="100%" /> 
 
             <FlexColumn dark={darkMode}>
                 <h1>{props.name}</h1>
