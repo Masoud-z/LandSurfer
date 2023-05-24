@@ -1,9 +1,6 @@
-import Image from 'next/image';
-import { stringify } from 'querystring';
 import React, { useContext } from 'react';
 import { Dark } from '../helper/Dark';
 import { Btn, CTA, Description, Img, LandingPageContainer, Title } from './style';
-import Globe from '../../public/assets/globe.png';
 import Link from 'next/link';
 import { ActivePage } from '../helper/ActivePage';
 
