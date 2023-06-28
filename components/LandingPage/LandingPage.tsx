@@ -33,7 +33,7 @@ const LandingPage = () => {
           </Link>
         </CTA>
       </Description>
-      <Image src="./globe.png" alt="globe" width="70%" height="100%" />
+      <Image src="/globe.png" alt="globe" width="70%" height="100%" />
     </LandingPageContainer>
   );
 };
