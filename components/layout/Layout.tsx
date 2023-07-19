@@ -29,19 +29,7 @@ const Layout = (props: any) => {
   }
 
   return (
-    <Page
-      dark={darkMode}
-      onClick={() => {
-        if (showList) {
-          setShowList(false);
-        }
-      }}
-      onTouchStart={() => {
-        if (showList) {
-          setShowList(false);
-        }
-      }}
-    >
+    <Page dark={darkMode}>
       <Head>
         <title>LandSurfer</title>
         <link rel="icon" href="/globe.png" />
@@ -51,12 +39,16 @@ const Layout = (props: any) => {
           <h3> LandSurfer</h3>
         </Link>
 
-        <NavBar onBlur={() => setShowList(false)}>
+        <NavBar tabIndex={1} onBlur={() => setShowList(false)}>
           <Toggler dark={darkMode} show={showList} onClick={toggleHandler}>
             <AiOutlineMenu />
           </Toggler>
 
-          <OptionsHolder show={showList} dark={darkMode}>
+          <OptionsHolder
+            show={showList}
+            dark={darkMode}
+            onClick={() => setShowList(false)}
+          >
             <Link href="/allCountries">
               <Options dark={darkMode} activePage={active == "All"}>
                 All Countries

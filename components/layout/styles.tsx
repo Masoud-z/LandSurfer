@@ -79,6 +79,7 @@ export const OptionsHolder = styled.div<CustomProps>`
     background-color: ${(props) => (props.dark ? "#2b3743" : "white")};
     transform: translateX(-43%);
     border-radius: 1rem;
+    z-index: 100;
   }
 `;
 

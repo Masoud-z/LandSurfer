@@ -4,12 +4,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { Dark } from "../helper/Dark";
 import { Flag, LoadingContinent } from "./style";
 
-const Continent = (props:any) => {
+const Continent = (props: any) => {
   const { darkMode, setDarkMode }: any = useContext(Dark);
 
   const [countries, setCountries]: any = useState([]);
   const [errorHandler, setErrorHandler] = useState("");
-  
+
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/region/${props.continent}`)
       .then((res) => res.json())
@@ -41,7 +41,10 @@ const Continent = (props:any) => {
 
   if (countries.length == 10) {
     countriesOfContinent.push(
-      <Link href={`./continents/${props.continent}`}>
+      <Link
+        href={`./continents/${props.continent}`}
+        key={`${props.continent}more`}
+      >
         <h3>more...</h3>
       </Link>
     );

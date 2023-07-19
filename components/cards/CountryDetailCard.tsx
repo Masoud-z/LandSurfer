@@ -8,12 +8,13 @@ import Image from "next/image";
 
 const CountryDetailCard = (props: any) => {
   const { darkMode, setDarkMode }: any = useContext(Dark);
-  const nativeName: any = Object.values(props.native)[0];
-  const currencies = Object.values(props.currencies).map(
-    (currency: any) => currency.name
-  );
-  const languages = Object.values(props.languages);
+  const nativeName: any = props.native ? Object.values(props.native)[0] : "";
+  const currencies = props.currencies
+    ? Object.values(props.currencies).map((currency: any) => currency.name)
+    : [];
+  const languages = props.languages ? Object.values(props.languages) : "";
   const [borderCountries, setBorderCountries] = useState<any[]>([]);
+  const [update, setUpdate]: any = useState(false);
 
   useEffect(() => {
     if (props.borders) {
@@ -27,6 +28,7 @@ const CountryDetailCard = (props: any) => {
         allCountries.push(countryJson[0]);
         if (allCountries.length === totalCountofAllCountries) {
           setBorderCountries(allCountries);
+          setUpdate((prev: boolean) => !prev);
         }
       });
     }
