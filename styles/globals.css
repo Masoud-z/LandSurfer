@@ -26,3 +26,10 @@ a {
   min-width: unset !important;
   min-height: unset !important;
 }
+
+@media screen and (max-width: 600px) {
+  .homeImage {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
