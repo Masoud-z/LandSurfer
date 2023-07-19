@@ -19,7 +19,6 @@ const Details = (props: any) => {
       })
       .catch(() => setErrorHandler("Could not Connect to the Server"));
   }, []);
-  console.log(country?.capital);
 
   return (
     <>
