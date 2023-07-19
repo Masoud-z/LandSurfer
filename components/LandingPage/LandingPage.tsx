@@ -1,13 +1,6 @@
 import React, { useContext } from "react";
 import { Dark } from "../helper/Dark";
-import {
-  Btn,
-  CTA,
-  Description,
-  Img,
-  LandingPageContainer,
-  Title,
-} from "./style";
+import { Btn, CTA, Description, LandingPageContainer, Title } from "./style";
 import Link from "next/link";
 import { ActivePage } from "../helper/ActivePage";
 import Image from "next/image";
@@ -33,7 +26,13 @@ const LandingPage = () => {
           </Link>
         </CTA>
       </Description>
-      <Image src="/globe.png" alt="globe" width="70%" height="100%" />
+      <Image
+        src="/globe.png"
+        alt="globe"
+        width={300}
+        height={300}
+        className="homeImage"
+      />
     </LandingPageContainer>
   );
 };
