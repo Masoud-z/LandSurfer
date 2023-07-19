@@ -119,6 +119,9 @@ export const Error = styled.div<CustomProps>`
   transform: translateX(-50%);
   color: ${(props) => (props.dark ? "white" : "black")};
   font-size: 4rem;
+  @media screen and (max-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ScrollUpContainer = styled.h4<CustomProps>`

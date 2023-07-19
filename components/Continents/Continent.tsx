@@ -30,7 +30,7 @@ const Continent = (props: any) => {
     countriesOfContinent = countries.map((country: any) => {
       return (
         <>
-          {errorHandler && <h2>{errorHandler}</h2>}
+          {errorHandler && <h4>{errorHandler}</h4>}
           <Link href={`./${country.cca3}`} key={country.name}>
             <Flag src={country.flags.png} key={country.flags.png} />
           </Link>

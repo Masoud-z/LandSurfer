@@ -44,7 +44,7 @@ const Details = (props: any) => {
         )
       )}
 
-      {errorHandler && <h2>{errorHandler}</h2>}
+      {errorHandler && <h4>{errorHandler}</h4>}
     </>
   );
 };
