@@ -8,7 +8,7 @@ import { Dark } from "../helper/Dark";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
-  const [showLoading, setshowLoading] = useState(true);
+  const [showLoading, setShowLoading] = useState(true);
   const [errorHandler, setErrorHandler] = useState("");
 
   const { region, setRegion }: any = useContext(RegionContext);
@@ -63,7 +63,7 @@ const Countries = () => {
         })
         .catch(() => setErrorHandler("Could not Connect to the Server"));
     }
-  }, [region, searchedCountry]);
+  }, [region, searchedCountry, setRegion]);
 
   const fetchCountries = (
     searchText: string,
