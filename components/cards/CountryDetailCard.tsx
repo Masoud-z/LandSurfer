@@ -52,6 +52,7 @@ const CountryDetailCard = (props: any) => {
           width: "100%  ",
           position: "relative",
           maxHeight: "60vh",
+          minHeight: "170px",
         }}
       >
         <Image

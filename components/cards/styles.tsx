@@ -72,9 +72,10 @@ export const Grid = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    grid-template-columns: 70%;
+    grid-template-columns: 85%;
     justify-content: center;
     height: auto;
+    gap: 5%;
   }
 `;
 
