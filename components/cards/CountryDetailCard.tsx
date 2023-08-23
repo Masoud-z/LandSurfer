@@ -46,7 +46,14 @@ const CountryDetailCard = (props: any) => {
 
   return (
     <Grid>
-      <div style={{ height: "100%", width: "100%  ", position: "relative" }}>
+      <div
+        style={{
+          height: "100%",
+          width: "100%  ",
+          position: "relative",
+          maxHeight: "60vh",
+        }}
+      >
         <Image
           loader={() => props.img}
           layout="fill"

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { Dark } from "../helper/Dark";
-import { CountryCard, CountryCardDetail, ImageContainer } from "./styles";
+import { CountryCard, CountryCardDetail } from "./styles";
 import Image from "next/image";
 
 const Country = (props: any) => {

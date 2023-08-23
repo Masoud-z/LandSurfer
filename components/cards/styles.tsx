@@ -123,9 +123,3 @@ export const Neighbour = styled.div<CustomProps>`
     padding: 0.5rem;
   }
 `;
-
-export const ImageContainer = styled.div`
-  height: "100%";
-  width: "100%  ";
-  position: "relative";
-`;
