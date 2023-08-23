@@ -78,9 +78,11 @@ export const Filter = styled.select<CustomProps>`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 19.9vw);
+  grid-template-columns: repeat(5, 15.92vw);
   gap: 3vw 3vw;
-
+  @media screen and (max-width: 1700px) {
+    grid-template-columns: repeat(4, 19.9vw);
+  }
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, 42vw);
   }

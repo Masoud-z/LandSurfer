@@ -18,7 +18,7 @@ const CountryDetailCard = (props: any) => {
 
   useEffect(() => {
     if (props.borders) {
-      const totalCountofAllCountries = props.borders.length;
+      const totalCountOfAllCountries = props.borders.length;
       let allCountries: any[] = [];
       props.borders.map(async (countryCode: any) => {
         const resp = await fetch(
@@ -26,7 +26,7 @@ const CountryDetailCard = (props: any) => {
         );
         const countryJson = await resp.json();
         allCountries.push(countryJson[0]);
-        if (allCountries.length === totalCountofAllCountries) {
+        if (allCountries.length === totalCountOfAllCountries) {
           setBorderCountries(allCountries);
           setUpdate((prev: boolean) => !prev);
         }
@@ -34,7 +34,7 @@ const CountryDetailCard = (props: any) => {
     }
   }, [props]);
 
-  const borderCountriesBotton = borderCountries.map((borderCountry) => {
+  const borderCountriesButton = borderCountries.map((borderCountry) => {
     return (
       <Link key={borderCountry.cca3} href={`./${borderCountry.cca3}`}>
         <Button key={borderCountry.name.common} dark={darkMode}>
@@ -46,7 +46,14 @@ const CountryDetailCard = (props: any) => {
 
   return (
     <Grid>
-      <Image src={props.img} alt={props.name} width="100%" height="100%" />
+      <div style={{ height: "100%", width: "100%  ", position: "relative" }}>
+        <Image
+          loader={() => props.img}
+          layout="fill"
+          src={props.img}
+          alt={props.name}
+        />
+      </div>
 
       <FlexColumn dark={darkMode}>
         <h1>{props.name}</h1>
@@ -104,7 +111,7 @@ const CountryDetailCard = (props: any) => {
         >
           <p>
             <b>Border Countries: </b>
-            {borderCountriesBotton}
+            {borderCountriesButton}
           </p>
         </Flex>
       </FlexColumn>

@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { Dark } from "../helper/Dark";
-import { CountryCard, CountryCardDitail } from "./styles";
+import { CountryCard, CountryCardDetail, ImageContainer } from "./styles";
 import Image from "next/image";
 
 const Country = (props: any) => {
@@ -12,9 +12,15 @@ const Country = (props: any) => {
   }
   return (
     <CountryCard dark={darkMode} onClick={ShowDetailHandler}>
-      <Image src={props.img} alt={props.name} width="100%" height="100%" />
+      <Image
+        loader={() => props.img}
+        width="100%"
+        height="150%"
+        src={props.img}
+        alt={props.name}
+      />
 
-      <CountryCardDitail dark={darkMode}>
+      <CountryCardDetail dark={darkMode}>
         <h2>{props.name}</h2>
         <p>
           <b>Population: </b>
@@ -28,7 +34,7 @@ const Country = (props: any) => {
           <b>Capital: </b>
           {props.capital}
         </p>
-      </CountryCardDitail>
+      </CountryCardDetail>
     </CountryCard>
   );
 };

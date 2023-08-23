@@ -18,7 +18,7 @@ const Continent = (props: any) => {
         setErrorHandler("");
       })
       .catch(() => setErrorHandler("Could not Connect to The Server"));
-  }, []);
+  }, [props.continent]);
 
   let countriesOfContinent;
   if (errorHandler) countriesOfContinent = errorHandler;

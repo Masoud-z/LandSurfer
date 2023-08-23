@@ -19,10 +19,6 @@ export const CountryCard = styled.div<CustomProps>`
   box-shadow: 0px 0px 1px rgba(43, 55, 67, 0.5);
   transition: linear 0.3s;
 
-  & > img {
-    height: 50%;
-  }
-
   &:hover {
     cursor: pointer;
     transform: scale(1.1);
@@ -30,10 +26,10 @@ export const CountryCard = styled.div<CustomProps>`
   }
 `;
 
-export const CountryCardDitail = styled.div<CustomProps>`
+export const CountryCardDetail = styled.div<CustomProps>`
   display: flex;
   flex-direction: column;
-  padding: 3vh 1vw 1.5vh;
+  padding: 3vh 1vw 3.5vh;
   & > h2 {
     margin-bottom: 2vh;
   }
@@ -126,4 +122,10 @@ export const Neighbour = styled.div<CustomProps>`
   & > button {
     padding: 0.5rem;
   }
+`;
+
+export const ImageContainer = styled.div`
+  height: "100%";
+  width: "100%  ";
+  position: "relative";
 `;
